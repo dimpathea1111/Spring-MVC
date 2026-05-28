@@ -9,4 +9,8 @@ import java.util.List;
 public interface CoffeeService {
 
      List<CoffeeResponse> getCoffees();
+
+     CoffeeResponse getCoffeeById(Integer id);
+
+     List<CoffeeResponse> searchCoffeeByName(String name );
 }

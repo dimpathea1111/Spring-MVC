@@ -2,6 +2,7 @@ package co.istad.chhaya.itespringrestapi.dto;
 
 public record CoffeeResponse(
         String name,
-        String description
+        String description,
+        Double price
 ) {
 }
