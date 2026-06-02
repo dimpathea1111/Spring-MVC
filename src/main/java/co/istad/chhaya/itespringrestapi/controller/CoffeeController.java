@@ -5,6 +5,7 @@ import co.istad.chhaya.itespringrestapi.dto.CoffeeResponse;
 import co.istad.chhaya.itespringrestapi.dto.CreateCoffeeRequest;
 import co.istad.chhaya.itespringrestapi.service.CoffeeService;
 //import co.istad.chhaya.itespringrestapi.service.impl.CoffeeServiceImpl;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +33,7 @@ public class CoffeeController {
 
     @ResponseStatus(HttpStatus.CREATED) // customize response status code here
     @PostMapping
-    public CoffeeResponse createCoffee(
+    public CoffeeResponse createCoffee(@Valid
             @RequestBody CreateCoffeeRequest createCoffeeRequest
     ) {
         return coffeeService.createCoffee(createCoffeeRequest);
@@ -59,6 +60,8 @@ public class CoffeeController {
         log.info("GET search price: {}", price);
         return coffeeService.searchCoffee(name, price);
     }
+
+
 
 
 }
